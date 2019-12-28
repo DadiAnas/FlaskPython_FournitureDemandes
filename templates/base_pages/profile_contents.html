@@ -1,0 +1,56 @@
+
+<form class="addusersform" id="adduserform" method="post" action="/modify_user"  >
+<style>
+
+	#buttondemander{
+		margin: 15% 28%;
+
+	}
+	.demo{
+		height: 80%;
+	}
+</style>
+	<table style="width:120%">
+	  <tr>
+		<td class="login__input name">Matricule :</td>
+		<td><input type="text" name="matricule" placeholder="Matricule" class="login__input name" value="{{user_id}}" style="opacity:0.5;color:yellow;" disabled></td>
+	  </tr>
+      <tr>
+		<td class="login__input name" >Nom : </td>
+		<td><input type="text" name="nom"  placeholder="NOM" class="login__input name" value="{{user_nom}}"></td>
+	  </tr>
+	  <tr>
+        <tr>
+		<td class="login__input name">prenom : </td>
+		<td><input type="text" name="prenom"  placeholder="PRENOM" class="login__input name" value="{{user_prenom}}"></td>
+	  </tr>
+		<td class="login__input name">Email : </td>
+		<td><input type="email" name="email"  placeholder="EMAIL" class="login__input name" VALUE="{{user_email}}"></td>
+	  </tr>
+      <tr>
+		<td class="login__input name">Fonction d'utilisateur :</td>
+		<td><select class="login__input name" style="opacity:0.5;color:yellow;">
+			<option>{{user_fonction}}</option>
+		  </select>
+		</td>
+	  	</tr>
+      <tr>
+		<td class="login__input name">Type d'utilisateur :</td>
+		<td><select class="login__input name" name="usertype" style="opacity:0.5;color:yellow;" id="type">
+			<option>{{current_user}}</option>
+		  </select>
+		</td>
+	  	</tr>
+
+      <tr>
+
+		<tr>
+		<td colspan="3">
+			<div class="buttons">
+				<input id="buttondemander" name="modifier" type="submit" value="modifier" class="btn btn-secondary btn-lg">
+			</div>
+		</td>
+		</tr>
+	</table>
+
+ </form>

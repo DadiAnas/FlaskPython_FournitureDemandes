@@ -1,0 +1,70 @@
+<!-- templates/administrateur.html -->
+
+{% extends "base_pages/user_base.html" %}
+
+{% block title %}
+  <title>{{ type }}'s profile</title>
+{% endblock %}
+
+{% block choosebuttons %}
+<style>
+   .butn {
+   background-color: Transparent;
+  text-shadow: 2px 4px 2px #6b676b;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  box-shadow: 0px 1px 3px #666666;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background-color: Transparent;
+  background-image: -webkit-linear-gradient(top, #f7f9fa, #a8abad);
+  background-image: -moz-linear-gradient(top, #f7f9fa, #a8abad);
+  background-image: -ms-linear-gradient(top, #f7f9fa, #a8abad);
+  background-image: -o-linear-gradient(top, #f7f9fa, #a8abad);
+  background-image: linear-gradient(to bottom, #f7f9fa, #a8abad);
+  text-decoration: none;
+}
+
+</style>
+{% with messages = get_flashed_messages() %}
+
+                            {% if messages %}
+
+                                <div id="alertsucess" class="butn" role="alert">
+                                                    {{ messages[0] }}
+                                </div>
+
+                            {% endif %}
+    {% endwith %}
+
+<script>
+
+
+    $(document).ready(function() {
+
+    /*$(adduserform).hide();*/
+      $("#btnaddusers").click(function() {
+    $("#adduserform").toggle();
+
+  });
+});
+
+
+</script>
+
+<button id="btnaddusers"  class="butn">Ajouter des utilisateurs</button>
+
+
+{% endblock %}
+
+
+
+	{% block forms %}
+	{% include "base_pages/adduser_form.html" %}
+  	{% endblock %}

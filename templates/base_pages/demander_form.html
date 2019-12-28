@@ -1,0 +1,42 @@
+               <!-- Css file is static/styles/user_style.css -->
+
+                <form class="addusersform"  method="post" action="/success"  >
+                    <table style="width:100%">
+                        <div class="card">
+                                  <img src="{{product[3]}}" alt="Avatar" style="width:100%">
+                                  <div class="container">
+                                    <h4><b>{{product[4]}}</b></h4>
+                                    <p>{{product[6]}}</p>
+                                  </div>
+                        </div>
+                        <div id="qte" class="login__input name" >
+                         <tr>
+                            <td class="login__input name">Quantitée : </td>
+                            <td><input type="text" id="qteinput" name="qte"  placeholder="NB: Max = {{qte}}" class="login__input name" required></td>
+                        </tr>
+                        </div>
+
+
+                        {% if qte <= 0 %}
+                            <tr>
+                                <td colspan="3">
+
+                                        <input id="buttondemander" name="demande" type="submit" value="demander" class="btn btn-secondary btn-lg" disabled>
+
+                                </td>
+                            </tr>
+
+                       {% else %}
+                           <tr>
+                                <td colspan="3">
+
+                                        <input id="buttondemander" name="demande" type="submit" value="demander" class="btn btn-secondary btn-lg">
+
+                                </td>
+                            </tr>
+                       {% endif %}
+
+
+                    </table>
+                 </form>
+

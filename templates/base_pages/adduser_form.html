@@ -1,0 +1,60 @@
+
+<form class="addusersform" id="adduserform" method="post" action="/add_user"  >
+	<style>
+
+	</style>
+	<table style="width:100%">
+	  <tr>
+		<td class="login__input name">Matricule :</td>
+		<td><input type="text" name="matricule" placeholder="MATRICULE" class="login__input name" required></td>
+	  </tr>
+      <tr>
+		<td class="login__input name">Nom : </td>
+		<td><input type="text" name="nom"  placeholder="NOM" class="login__input name"></td>
+	  </tr>
+	  <tr>
+        <tr>
+		<td class="login__input name">prenom : </td>
+		<td><input type="text" name="prenom"  placeholder="prenom" class="login__input name"></td>
+	  </tr>
+		<td class="login__input name">Email : </td>
+		<td><input type="email" name="email"  placeholder="EMAIL" class="login__input name"></td>
+	  </tr>
+	  <tr>
+		<td class="login__input name">Password : </td>
+		<td><input type="password" name="password" placeholder="PASSWORD" class="login__input name" minlength="8" required></td>
+	  </tr>
+      <tr>
+		<td class="login__input name">Fonction d'utilisateur :</td>
+		<td><select class="login__input name" >
+			<option>Serv</option>
+			<option>etab</option>
+		  </select>
+		</td>
+	  	</tr>
+      <tr>
+		<td class="login__input name">Type d'utilisateur :</td>
+		<td><select class="login__input name" name="usertype" id="type">
+			<option>administrateur</option>
+			<option>utilisateur</option>
+			<option>validateur</option>
+			<option>magasinier </option>
+		  </select>
+		</td>
+	  	</tr>
+        <tr>
+		<td class="login__input name">Matricule de leur superier : </td>
+		<td><input type="text" name="superieur" placeholder="MATRICULE" class="login__input name"></td>
+	  </tr>
+      <tr>
+
+		<tr>
+		<td colspan="3">
+			<div class="buttons">
+				<input name="Ajouter" type="submit" value="Ajouter" class="butn" style="margin:auto;">
+			</div>
+		</td>
+		</tr>
+	</table>
+
+ </form>

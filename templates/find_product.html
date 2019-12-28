@@ -1,0 +1,23 @@
+<!-- templates/find_product.html -->
+
+{% extends "products.html" %}
+
+
+{% block forms %}
+<ul>
+{% for product in products %}
+
+  <a href="/demander/product_id={{product[0]}}">
+        <li id="{{product[4]}}">
+            <div  class="details">
+                <h2>{{product[4]}}</h2>
+                <p>{{product[6]}}</p>
+                <div class="product">
+                    <img src="{{product[3]}}">
+                </div>
+            </div>
+        </li>
+  </a>
+{% endfor %}
+</ul>
+{% endblock %}

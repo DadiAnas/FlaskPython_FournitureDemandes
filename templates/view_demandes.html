@@ -1,0 +1,22 @@
+<!-- templates/view_demandes.html -->
+
+{% extends "base_pages/user_base.html" %}
+
+{% block title %}
+  <title>demandes</title>
+{% endblock %}
+
+{% block forms %}
+<ul>
+{% for demande in demandes %}
+
+  <li id="{{product[4]}}">
+    <div  class="details">
+      <h2>{{demande[4]}}</h2>
+      <p>{{demande[6]}}</p>
+    </div>
+  </li>
+
+{% endfor %}
+</ul>
+{% endblock %}

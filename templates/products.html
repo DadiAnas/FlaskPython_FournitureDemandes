@@ -1,0 +1,72 @@
+<!-- templates/add_user.html -->
+
+{% extends "base_pages/user_base.html" %}
+
+
+{% block choosebuttons %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <style>
+           .butn {
+           background-color: Transparent;
+          text-shadow: 2px 4px 2px #6b676b;
+          -webkit-box-shadow: 0px 1px 3px #666666;
+          -moz-box-shadow: 0px 1px 3px #666666;
+          box-shadow: 0px 1px 3px #666666;
+          font-family: Georgia;
+          color: #ffffff;
+          font-size: 18px;
+          padding: 10px 20px 10px 20px;
+          text-decoration: none;
+        }
+
+        .butn:hover {
+          background-color: Transparent;
+          background-image: -webkit-linear-gradient(top, #f7f9fa, #a8abad);
+          background-image: -moz-linear-gradient(top, #f7f9fa, #a8abad);
+          background-image: -ms-linear-gradient(top, #f7f9fa, #a8abad);
+          background-image: -o-linear-gradient(top, #f7f9fa, #a8abad);
+          background-image: linear-gradient(to bottom, #f7f9fa, #a8abad);
+          text-decoration: none;
+        }
+
+        </style>
+    <div id="alertsucess" class="butn" role="alert">
+        {{ messages[0] }}
+    </div>
+
+    {% endif %}
+{% endwith %}
+
+<form method="POST" action="/find_product">
+  <table style="width:100%">
+
+	  <div class="login__row">
+      <svg class="svg-icon" viewBox="0 0 20 20">
+							<path fill="none" d="M12.323,2.398c-0.741-0.312-1.523-0.472-2.319-0.472c-2.394,0-4.544,1.423-5.476,3.625C3.907,7.013,3.896,8.629,4.49,10.102c0.528,1.304,1.494,2.333,2.72,2.99L5.467,17.33c-0.113,0.273,0.018,0.59,0.292,0.703c0.068,0.027,0.137,0.041,0.206,0.041c0.211,0,0.412-0.127,0.498-0.334l1.74-4.23c0.583,0.186,1.18,0.309,1.795,0.309c2.394,0,4.544-1.424,5.478-3.629C16.755,7.173,15.342,3.68,12.323,2.398z M14.488,9.77c-0.769,1.807-2.529,2.975-4.49,2.975c-0.651,0-1.291-0.131-1.897-0.387c-0.002-0.004-0.002-0.004-0.002-0.004c-0.003,0-0.003,0-0.003,0s0,0,0,0c-1.195-0.508-2.121-1.452-2.607-2.656c-0.489-1.205-0.477-2.53,0.03-3.727c0.764-1.805,2.525-2.969,4.487-2.969c0.651,0,1.292,0.129,1.898,0.386C14.374,4.438,15.533,7.3,14.488,9.77z"></path>
+      </svg>
+          <input type="text" class="login__input name"  name="productafind" placeholder="Nom de produit" autofocus="" required>
+        </div>
+      <button class="login__submit">Trouver</button>
+	</table>
+</form>
+{% endblock %}
+{% block forms %}
+
+<ul>
+{% for product in products %}
+    <a href="{{ url_for('auth.demander_redirect',product_id=product[0]) }}">
+        <li id="{{product[4]}}">
+            <div  class="details">
+                <h2>{{product[4]}}</h2>
+                <p>{{product[5]}}</p>
+                <div class="product">
+                    <img src="{{product[3]}}">
+                </div>
+            </div>
+        </li>
+    </a>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!-- templates/profile.html -->
+
+{% extends "base_pages/demander_base.html" %}
+
+{% block title %}
+  <title>profile</title>
+{% endblock %}
+
+{% block content %}
+{% if session['logged_in'] %}
+  {% include 'base_pages/profile_contents.html'%}
+
+{% endif %}
+{% endblock %}
